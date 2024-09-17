@@ -36,5 +36,5 @@ html {
     pointer-events: none;
     transition: mask-image 0.5s ease-out;
     /* Ajuste o tempo da transição aqui */
-    mask-image: radial-gradient(circle at var(--mouseX, 50%) var(--mouseY, 50%), rgba(255, 255, 255, 0.8) 50px, rgba(255, 255, 255, 0) 300px);
+    mask-image: radial-gradient(circle at var(--mouseX, 50%) var(--mouseY, 50%), rgba(255, 255, 255, 1) 1px, rgba(255, 255, 255, 0) 750px);
 }
