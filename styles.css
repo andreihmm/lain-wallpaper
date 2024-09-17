@@ -26,7 +26,7 @@ html {
     left: 0;
 }
 
-.static-image {
+.static-video {
     position: absolute;
     top: 0;
     left: 0;
@@ -34,7 +34,12 @@ html {
     height: 100%;
     object-fit: cover;
     pointer-events: none;
-    transition: mask-image 0.5s ease-out;
-    /* Ajuste o tempo da transição aqui */
-    mask-image: radial-gradient(circle at var(--mouseX, 50%) var(--mouseY, 50%), rgba(255, 255, 255, 1) 1px, rgba(255, 255, 255, 0) 750px);
+    transition: mask-image 1.5s ease-out;
+    /* Transição mais lenta para suavidade */
+    mask-image: radial-gradient(circle at var(--mouseX, 50%) var(--mouseY, 50%),
+            rgba(255, 255, 255, 0.4) 100px,
+            /* Parte transparente no centro */
+            rgba(255, 255, 255, 0.9) 400px
+            /* Parte opaca nas bordas */
+        );
 }

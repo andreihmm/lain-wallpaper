@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TV Estática Interativa</title>
+    <title>TV Estática Interativa com WebM</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -12,11 +12,15 @@
     <div class="tv-container">
         <!-- Vídeo WebM da garota -->
         <video class="background-video" autoplay loop muted>
-            <source src="anime-girl-longo.webm" type="video/webm">
+            <source src="anime-girl.webm" type="video/webm">
             Seu navegador não suporta o formato de vídeo.
         </video>
-        <!-- Efeito de estática com GIF -->
-        <img src="tv-static-1.gif" alt="Efeito de Estática" class="static-image" id="staticEffect">
+
+        <!-- Vídeo WebM da estática -->
+        <video class="static-video" autoplay loop muted>
+            <source src="tv-static.webm" type="video/webm">
+            Seu navegador não suporta o formato de vídeo.
+        </video>
     </div>
 
     <script src="script.js"></script>

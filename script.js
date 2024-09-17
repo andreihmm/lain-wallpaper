@@ -2,7 +2,7 @@ let mouseX = 0;
 let mouseY = 0;
 let targetX = 0;
 let targetY = 0;
-const delay = 5; // Intervalo de atraso em milissegundos
+const delay = 0; // Intervalo de atraso em milissegundos
 let lastUpdate = 0;
 
 document.addEventListener('mousemove', (event) => {
@@ -19,7 +19,7 @@ function updateMask(timestamp) {
         targetX += (mouseX - targetX) * 0.1;
         targetY += (mouseY - targetY) * 0.1;
 
-        const staticEffect = document.getElementById('staticEffect');
+        const staticEffect = document.querySelector('.static-video');
         staticEffect.style.setProperty('--mouseX', `${targetX}px`);
         staticEffect.style.setProperty('--mouseY', `${targetY}px`);
 
