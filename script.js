@@ -16,8 +16,8 @@ function updateMask(timestamp) {
 
     if (progress > delay) {
         // Suaviza o movimento com um atraso
-        targetX += (mouseX - targetX) * 0.1;
-        targetY += (mouseY - targetY) * 0.1;
+        targetX += (mouseX - targetX) * 0.9;
+        targetY += (mouseY - targetY) * 0.9;
 
         const staticEffect = document.querySelector('.static-video');
         staticEffect.style.setProperty('--mouseX', `${targetX}px`);
