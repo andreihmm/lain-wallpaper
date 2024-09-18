@@ -1,33 +1,10 @@
-let mouseX = 0;
-let mouseY = 0;
-let targetX = 0;
-let targetY = 0;
-const delay = 0; // Intervalo de atraso em milissegundos
-let lastUpdate = 0;
+const staticVideo = document.querySelector('.static-video');
 
-document.addEventListener('mousemove', (event) => {
-    mouseX = event.clientX;
-    mouseY = event.clientY;
+document.addEventListener('mousemove', (e) => {
+    const mouseX = e.clientX / window.innerWidth * 100;
+    const mouseY = e.clientY / window.innerHeight * 100;
+
+    // Atualiza as variáveis de posição do mouse para a máscara da estática
+    staticVideo.style.setProperty('--mouseX', `${mouseX}%`);
+    staticVideo.style.setProperty('--mouseY', `${mouseY}%`);
 });
-
-function updateMask(timestamp) {
-    if (!lastUpdate) lastUpdate = timestamp;
-    const progress = timestamp - lastUpdate;
-
-    if (progress > delay) {
-        // Suaviza o movimento com um atraso
-        targetX += (mouseX - targetX) * 0.9;
-        targetY += (mouseY - targetY) * 0.9;
-
-        const staticEffect = document.querySelector('.static-video');
-        staticEffect.style.setProperty('--mouseX', `${targetX}px`);
-        staticEffect.style.setProperty('--mouseY', `${targetY}px`);
-
-        lastUpdate = timestamp;
-    }
-
-    requestAnimationFrame(updateMask);
-}
-
-// Inicia a atualização da máscara
-updateMask();
