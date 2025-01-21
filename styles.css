@@ -26,26 +26,13 @@ html {
     left: 0;
 }
 
-.video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-/* Definindo o vídeo da garota com visibilidade apenas no centro */
 .background-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: relative;
-    mask: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 90%);
-    /* Parte central visível e bordas invisíveis */
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .static-video {
@@ -57,7 +44,20 @@ html {
     object-fit: cover;
     pointer-events: none;
     transition: mask-image 1.5s ease-out;
-    mask-image: radial-gradient(circle at var(--mouseX, 50%) var(--mouseY, 50%),
-            rgba(255, 255, 255, 0) 10px,
-            rgba(255, 255, 255, 0.9) 400px);
+
+    /* Máscara combinada */
+    mask-image:
+        radial-gradient(circle, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 70%),
+        /* Máscara fixa */
+        radial-gradient(circle at var(--mouseX, 50%) var(--mouseY, 50%), rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.9) 40%);
+    /* Máscara móvel */
+
+    -webkit-mask-image:
+        radial-gradient(circle, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 70%),
+        /* Máscara fixa */
+        radial-gradient(circle at var(--mouseX, 50%) var(--mouseY, 50%), rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.9) 40%);
+    /* Máscara móvel */
+
+    mask-composite: intersect;
+    -webkit-mask-composite: destination-in;
 }
