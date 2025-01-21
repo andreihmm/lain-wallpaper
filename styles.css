@@ -47,13 +47,13 @@ html {
 
     /* Máscara combinada */
     mask-image:
-        radial-gradient(circle, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 70%),
+        radial-gradient(circle, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 60%),
         /* Máscara fixa */
         radial-gradient(circle at var(--mouseX, 50%) var(--mouseY, 50%), rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.9) 40%);
     /* Máscara móvel */
 
     -webkit-mask-image:
-        radial-gradient(circle, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 70%),
+        radial-gradient(circle, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 60%),
         /* Máscara fixa */
         radial-gradient(circle at var(--mouseX, 50%) var(--mouseY, 50%), rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.9) 40%);
     /* Máscara móvel */
